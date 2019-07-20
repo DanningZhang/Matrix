@@ -86,18 +86,18 @@ public class ControlPanel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control_panel);
-
+        //set up ViewPager
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         vpPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         vpPager.setCurrentItem(0);
-
+        //set up actionbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.menu);
+        //set up Drawer listener --> behavior when opening/closing Drawer
         mDrawerLayout = findViewById(R.id.drawer_layout);
-
         final LocationTracker mLocationTracker = new LocationTracker(this);
         mDrawerLayout.addDrawerListener(
                 new DrawerLayout.DrawerListener() {

@@ -215,9 +215,7 @@ public class MainFragment extends Fragment implements OnMapReadyCallback, Google
         MapsInitializer.initialize(getContext());
         googleMap.setOnMarkerClickListener(this);
         mMap = googleMap;
-        googleMap.setMapStyle(
-                MapStyleOptions.loadRawResourceStyle(
-                        getActivity(), R.raw.style_json));
+        googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getActivity(), R.raw.style_json));
         //Get location using LocationTracker
         locationTracker = new LocationTracker(getActivity());
         locationTracker.getLocation();
